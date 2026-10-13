@@ -1,8 +1,10 @@
 *{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 .contenedor{
+    position: relative;
     margin: 7%;
     border: 2px solid rgb(79, 246, 255);
     border-radius: 20px;
@@ -72,3 +74,58 @@ p{
     transform: translateY(2px);
     background-color: rgb(89, 0, 0);
 }
+
+.registrarTarea{
+    display: none;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.registrarTarea h2{
+    color: aqua;
+    margin: 100px;
+}
+#nombreTarea{
+    margin: 30px;
+    width: 60%;
+    height: 30px;
+    border: 2px solid aqua;
+    border-radius: 15px;
+}
+.tareaTerminada{
+    color: aqua;
+    margin: 60px;
+}
+.botonesAgregar{
+    display: flex;
+    height: 30px;
+    margin: 20px;
+    width: 100%;
+    justify-content: space-between;
+}
+.botonesAgregar #guardarTarea{
+    background-color: black;
+    color: aqua;
+    width: 30%;
+    border-radius: 15px;
+}
+.botonesAgregar #cancelarTarea{
+    background-color: black;
+    color: aqua;
+    width: 30%;
+    border-radius: 15px;
+}
+#cancelarTarea:hover{
+    background-color: aqua;
+    color: black;
+}
+#guardarTarea:hover{
+    background-color: aqua;
+    color: black;
+}
+

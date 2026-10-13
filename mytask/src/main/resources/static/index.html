@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,18 +11,32 @@
         <h1>My tasks</h1>
         <p>Gestiona tus tareas</p>
         <div class="buscador">
-            <input class="inputBuscar" type="text" placeholder="Busca tareas por nombre">
+            <input id="inputBuscar" class="inputBuscar" type="number" placeholder="Busca tareas por id">
             <button id="buscar">Buscar</button>
         </div>
 
-        <div class="tareas">
-            <ul>
-                
-            </ul>
+        <div id="tareas" class="tareas">
+            <!--Tareas-->
         </div>
+
         <div class="botones">
             <button id="agregar">+ AGREGAR</button>
             <button id="eliminar"> - ELIMINAR</button>
+        </div>
+
+    </div>
+
+    <div id="registrarTarea" class="registrarTarea">
+        <h2>REGISTRA TU TAREA</h2>
+        <input id="nombreTarea" type="text" placeholder="Ingresa el nombre de la tarea">
+        <div class="tareaTerminada">
+            <input id="terminada" type="checkbox">
+            <label for="terminada">¿La tarea esta terminada?</label>
+        </div>
+
+        <div class="botonesAgregar">
+            <button id="guardarTarea">GUARDAR</button>
+            <button id="cancelarTarea">CANCELAR</button>
         </div>
     </div>
     <script src="app.js"></script>
