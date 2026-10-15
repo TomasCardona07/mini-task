@@ -33,12 +33,20 @@ public class Tarea {
 
     }
 
+    public long getId(){
+        return this.id;
+    }
+
     public String getNombre(){
         return this.nombre;
     }
 
     public Boolean getTerminada(){
         return this.terminada;
+    }
+
+    public void setId(long id){
+        this.id = id;
     }
 
     public void setNombre(String nuevoNombre){

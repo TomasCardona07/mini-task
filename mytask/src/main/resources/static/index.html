@@ -11,13 +11,23 @@
         <h1>My tasks</h1>
         <p>Gestiona tus tareas</p>
         <div class="buscador">
-            <input id="inputBuscar" class="inputBuscar" type="number" placeholder="Busca tareas por id">
+            <input id="inputBuscar" class="inputBuscar" type="text" placeholder="Busca tareas por nombre">
             <button id="buscar">Buscar</button>
         </div>
 
-        <div id="tareas" class="tareas">
-            <!--Tareas-->
-        </div>
+        <table id="tareas" class="tareas">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOMBRE</th>
+                    <th>ESTADO</th>
+                    <th class="columnaEliminar">ACCIÓN</th>
+                </tr>
+            </thead>
+            <tBody id="listaTareas" class="listaTareas">
+                <!--aqui se muestran las tareas-->
+            </tBody>
+        </table>
 
         <div class="botones">
             <button id="agregar">+ AGREGAR</button>

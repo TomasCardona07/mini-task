@@ -1,131 +1,344 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-.contenedor{
-    position: relative;
-    margin: 7%;
-    border: 2px solid rgb(79, 246, 255);
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0B0D18, #171B30);
+    color: #F4F6FF;
+    font-family: Arial, sans-serif;
+    padding: 30px 16px;
+}
+
+/* CONTENEDOR PRINCIPAL */
+
+.contenedor {
+    width: 100%;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 28px;
+    background: #101323;
+    border: 1px solid #343957;
     border-radius: 20px;
-    box-shadow: 0px 0px 5px 5px rgba(114, 213, 255, 0.2);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.35);
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 16px;
 }
-.contenedor h1{
+
+.contenedor h1 {
+    text-align: center;
+    color: #8CEBFF;
+    font-size: 36px;
+    letter-spacing: 1px;
+}
+
+.contenedor p {
+    text-align: center;
+    color: #9CA3B8;
+    margin-bottom: 10px;
+}
+
+/* BUSCADOR */
+
+.buscador {
     display: flex;
+    gap: 10px;
+    width: 100%;
+    height: 44px;
+}
+
+.inputBuscar {
+    flex: 1;
+    min-width: 0;
+    padding: 0 14px;
+    background: #1B2034;
+    color: white;
+    border: 1px solid #343957;
+    border-radius: 9px;
+    outline: none;
+}
+
+.inputBuscar:focus {
+    border-color: #8CEBFF;
+    box-shadow: 0 0 0 3px rgba(140, 235, 255, 0.1);
+}
+
+#buscar {
+    width: 110px;
+    border: none;
+    border-radius: 9px;
+    background: #5262D9;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#buscar:hover {
+    background: #6979F0;
+}
+
+/* TABLA */
+
+.tareas {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 9px;
+    table-layout: auto;
+}
+
+.tareas thead th {
+    color: #8F9AB8;
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding: 12px 10px;
+    border: none;
+    box-shadow: none;
+    text-align: left;
+}
+
+.listaTareas td {
+    background: #1B2034;
+    padding: 15px 12px;
+    border-top: 1px solid #292F49;
+    border-bottom: 1px solid #292F49;
+    color: #E5E9F8;
+    text-align: left;
+}
+
+.listaTareas td:first-child {
+    border-left: 1px solid #292F49;
+    border-radius: 10px 0 0 10px;
+    color: #8CEBFF;
+    font-weight: bold;
+}
+
+.listaTareas td:last-child {
+    border-right: 1px solid #292F49;
+    border-radius: 0 10px 10px 0;
+}
+
+.listaTareas tr:hover td {
+    background: #252B43;
+}
+
+.listaTareas .nombre {
+    overflow-wrap: anywhere;
+}
+
+/* ESTADOS */
+
+.estado {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.completada {
+    background: #103B32;
+    color: #71E4B2;
+}
+
+.pendiente {
+    background: #44351B;
+    color: #FFD27A;
+}
+
+/* BOTÓN DE CANECA */
+
+.celdaEliminar {
+    text-align: center !important;
+    width: 65px;
+}
+
+.btnEliminar {
+    width: 34px;
+    height: 34px;
+    align-items: center;
     justify-content: center;
-}
-.buscador{
-    display: flex;
-    justify-content: space-between;
-    height: 40px;
-    margin: 4px;
-}
-.inputBuscar{
-    display: flex;
-    justify-self: end;
-    width: 85%;
-    background-color: rgb(47, 46, 46) ;
-    color: rgba(2, 67, 95, 0.813);
-    border: 3px solid aqua;
-    border-radius: 5px;
-}
-#buscar:hover{
-    background-color: rgb(64, 64, 65);
-    color: black;
-}
-#buscar{
-    background-color: rgba(0, 6, 50, 0.425);
-    color: rgba(4, 0, 99, 0.591);
-    width: 15%;
-    border: 3px solid aqua;
-}
-h1{
-    color: aqua;
-}
-p{
-    margin: 4px;
-    color: gray;
-}
-.botones{
-    display: flex;
-    justify-content: space-between;
-    margin: 10px;
-    height: 30px;
-}
-#agregar{
-    width: 30%;
-    border-radius: 5px;
-    background-color: rgb(1, 116, 1);
-}
-#eliminar{
-    width: 30%;
-    border-radius: 5px;
-    background-color: rgb(177, 0, 0);
-}
-#agregar:hover{
-    transform: translateY(2px);
-    background-color: rgb(0, 66, 0);
+    margin: auto;
+    border: 1px solid #71374B;
+    border-radius: 9px;
+    background: #542E40;
+    color: #FFB4C5;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
-#eliminar:hover{
-    transform: translateY(2px);
-    background-color: rgb(89, 0, 0);
+.btnEliminar:hover {
+    background: #B42348;
+    border-color: #FF7897;
+    transform: scale(1.08);
 }
 
-.registrarTarea{
+/* BOTONES PRINCIPALES */
+
+.botones {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 5px;
+}
+
+.botones button {
+    flex: 1;
+    min-height: 43px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#agregar {
+    background: #176747;
+    color: #A7FFD5;
+}
+
+#agregar:hover {
+    background: #21865E;
+    transform: translateY(-2px);
+}
+
+#eliminar {
+    background: #542E40;
+    color: #FFB4C5;
+}
+
+#eliminar:hover,
+#eliminar.modoActivo {
+    background: #B42348;
+    color: white;
+    box-shadow: 0 0 14px rgba(255, 70, 110, 0.2);
+}
+
+/* FORMULARIO DE REGISTRO */
+
+.registrarTarea {
     display: none;
     position: fixed;
     inset: 0;
+    z-index: 10;
     width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.75);
+    min-height: 100vh;
+    padding: 24px;
+    background: rgba(5, 7, 16, 0.85);
+    backdrop-filter: blur(6px);
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-.registrarTarea h2{
-    color: aqua;
-    margin: 100px;
-}
-#nombreTarea{
-    margin: 30px;
-    width: 60%;
-    height: 30px;
-    border: 2px solid aqua;
-    border-radius: 15px;
-}
-.tareaTerminada{
-    color: aqua;
-    margin: 60px;
-}
-.botonesAgregar{
-    display: flex;
-    height: 30px;
-    margin: 20px;
-    width: 100%;
-    justify-content: space-between;
-}
-.botonesAgregar #guardarTarea{
-    background-color: black;
-    color: aqua;
-    width: 30%;
-    border-radius: 15px;
-}
-.botonesAgregar #cancelarTarea{
-    background-color: black;
-    color: aqua;
-    width: 30%;
-    border-radius: 15px;
-}
-#cancelarTarea:hover{
-    background-color: aqua;
-    color: black;
-}
-#guardarTarea:hover{
-    background-color: aqua;
-    color: black;
+
+.registrarTarea h2 {
+    color: #8CEBFF;
+    text-align: center;
+    margin: 0 0 25px;
 }
 
+#nombreTarea {
+    width: 100%;
+    max-width: 450px;
+    height: 48px;
+    padding: 0 15px;
+    margin: 0 0 20px;
+    border: 1px solid #5262D9;
+    border-radius: 10px;
+    background: #1B2034;
+    color: white;
+    outline: none;
+}
+
+#nombreTarea:focus {
+    border-color: #8CEBFF;
+}
+
+.tareaTerminada {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #D8DEF5;
+    margin: 0 0 25px;
+}
+
+.tareaTerminada input {
+    accent-color: #5262D9;
+    width: 17px;
+    height: 17px;
+}
+
+.botonesAgregar {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    max-width: 450px;
+}
+
+.botonesAgregar button {
+    flex: 1;
+    min-height: 43px;
+    border: 1px solid #5262D9;
+    border-radius: 10px;
+    background: #1B2034;
+    color: #8CEBFF;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.botonesAgregar button:hover {
+    background: #5262D9;
+    color: white;
+}
+
+/* DISEÑO PARA CELULARES */
+
+@media (max-width: 600px) {
+    body {
+        padding: 12px 8px;
+    }
+
+    .contenedor {
+        padding: 16px 10px;
+        margin: 12px auto;
+        border-radius: 14px;
+    }
+
+    .contenedor h1 {
+        font-size: 29px;
+    }
+
+    .tareas thead th {
+        font-size: 10px;
+        padding: 8px 5px;
+    }
+
+    .listaTareas td {
+        padding: 12px 5px;
+        font-size: 12px;
+    }
+
+    .estado {
+        font-size: 10px;
+        padding: 5px 6px;
+    }
+
+    .celdaEliminar {
+        width: 43px;
+    }
+
+    .btnEliminar {
+        width: 30px;
+        height: 30px;
+        font-size: 15px;
+    }
+
+    .botones button {
+        font-size: 12px;
+    }
+}

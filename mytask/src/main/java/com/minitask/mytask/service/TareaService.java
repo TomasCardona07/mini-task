@@ -20,6 +20,12 @@ public class TareaService {
     }
 
     public Tarea agregarTarea(Tarea tarea){
-        return tareaRepository.save(tarea);
+        Tarea tareaJava = new Tarea(tarea.getNombre(),tarea.getTerminada());
+        return tareaRepository.save(tareaJava);
+    }
+
+    public long eliminarTarea(long id){
+        tareaRepository.deleteById(id);
+        return id;
     }
 }
